@@ -1,12 +1,19 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//get all blog posts
+//get all blog posts of the user
 router.post('/', withAuth, async (req, res) => {
   try {
-    const blogPosts = await Blog.findAll();
-    res.render('blog/index', { blogPosts });
+    if (req.session) {
+      const blogPosts = await Post.findAll({
+        where: {
+          user_id: req.session.user_id,
+        },
+      });
+      res.render('dashboard', { blogPosts });
+    }
+
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');

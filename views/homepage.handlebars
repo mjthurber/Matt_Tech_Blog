@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matt's Tech Blog</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        <nav>
+      
+      <a href="/">Home</a>
+      <a href="/Dashboard">Dashboard</a>
+        {{#if logged_in}}
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+        </nav>
+        </h1>
+      <h2>
+        <a href="/">Matt's Tech Blog</a>
+      </h2>
+    </header>
+    <body>
+    {{#each posts as |post|}}
+    <div class="post">
+      <h3>{{post.title}}</h3>
+      <h4>{{post.user.username}}</h4>
+      <p>{{post.body}}</p>
+      <p>{{post.created_at}}</p>
+      {{/each}}
+      </body>
