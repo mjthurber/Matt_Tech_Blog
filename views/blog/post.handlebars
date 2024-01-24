@@ -1,0 +1,16 @@
+{{#extend "layout/main"}}
+    {{#content "body"}}
+        {{#each post}}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{{title}}</h1>
+                    <p>{{{body}}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    {{/content}}
+{{/extend}}
+
+{{! Path: Tech_Blog/views/layout/main.handlebars }}

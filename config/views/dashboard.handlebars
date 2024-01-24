@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    {{#each posts}}
+        {{#if (eq this.user authenticated_user)}}
+            <div>
+                <h2>{{this.title}}</h2>
+                <p>{{this.contents}}</p>
+                <a href="/edit_post/{{@index}}">Edit</a>
+                <a href="/delete_post/{{@index}}">Delete</a>
+            </div>
+        {{/if}}
+    {{/each}}
+    <a href="/add_post">Add New Post</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>
