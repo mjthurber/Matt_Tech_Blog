@@ -34,5 +34,5 @@ const seedUser = async () => {
   // Bulk create users with hashed passwords
   await User.bulkCreate(hashedUserData);
 };
-
+console.log(userData)
 module.exports = seedUser;
