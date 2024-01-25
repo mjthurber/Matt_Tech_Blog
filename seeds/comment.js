@@ -1,23 +1,23 @@
-const { comment } = require('../models')
+const { Comment } = require('../models')
 
 const commentData = [
     {
-        comment_text: 'This is a comment',
-        user_id: 1,
-        post_id: 1
+        comment: 'This is a comment',
+        userID: 1,
+        postID: 1
     },
     {
-        comment_text: 'This is another comment',
-        user_id: 2,
-        post_id: 2
+        comment: 'This is another comment',
+        userID: 2,
+        postID: 2
     },
     {
-        comment_text: 'This is a third comment',
-        user_id: 3,
-        post_id: 3
+        comment: 'This is a third comment',
+        userID: 3,
+        postID: 3
     }
 ];
 
-const seedComments = () => comment.bulkCreate(commentData);
+const seedComment = () => Comment.bulkCreate(commentData);
 
-module.exports = seedComments;
+module.exports = seedComment;

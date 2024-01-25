@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withauth = require('../utils/auth');
 
 router.get('/signup', (req, res) => {
@@ -15,7 +15,6 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-  res.render('login');
 });
 
 

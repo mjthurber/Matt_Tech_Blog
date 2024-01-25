@@ -51,8 +51,10 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'User',
   }
 );
+
+sequelize.sync({ force: true });
 
 module.exports = User;
